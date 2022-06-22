@@ -8,27 +8,28 @@
 
 <section class="section">
   <div class="container">
-    <form action="submit">
+    <form [formGroup]="homePageForm" (ngSubmit)="convert()">
       <label for="value-from"> FROM
-        <input type="number" name="value-from" />
+        <input formControlName="valueFrom" type="number" name="value-from" />
       </label>
       <label for="select-from">
-         <select name="select-from" id="select-from">
+         <select formControlName="selectFrom" name="select-from" id="select-from">
             <option value="UAH">UAH</option>
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
          </select>
       </label>
       <label for="value-to"> TO
-        <input type="number" name="value-to" />
+        <input formControlName="valueTo" type="number" name="value-to" />
       </label>
       <label for="select-to">
-        <select name="select-from" id="select-to">
+        <select formControlName="selectTo" name="select-to" id="select-to">
             <option value="UAH">UAH</option>
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
         </select>
      </label>
+     <button type="submit">Convert</button>
     </form>
   </div>
 </section>
